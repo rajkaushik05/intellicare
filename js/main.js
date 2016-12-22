@@ -30,7 +30,6 @@
 				$(this).children('.text').text('View Details');
 				flag = true;
 			}
-			debugger;
 			$('.bxslider').bxSlider({
 	            slideWidth: 235,
 	            slideMargin: 10,
