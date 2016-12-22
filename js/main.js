@@ -18,10 +18,35 @@
 			e.stopPropagation();
 		})
 
+	    var flag = true;
 		// site detail bxslider show / hide  
-		$('#viewBXSliderContent').click(function(){
-			$('#bxsliderBlock').slideToggle(100);
+		$('.site-item .view-bxslider-content').click(function(e){
+			$(this).toggleClass('arrow-up');
+			$(this).parents('.dispensers').siblings('.bxslider-block').slideToggle(100);
+			if(flag == true){
+				$(this).children('.text').text('Hide Details');
+				flag = false;	
+			} else {
+				$(this).children('.text').text('View Details');
+				flag = true;
+			}
 			
+
+			e.preventDefault();
+		})
+
+		$('.bxslider-block .bxslider li').click(function(){
+			$(this).siblings('li').removeClass('active');
+			$(this).addClass('active');
+			var getIndex = $(this).index();
+			$(this).parents('.bxslider-wrap').siblings('.tab-content').find('.tab').hide();
+			$(this).parents('.bxslider-wrap').siblings('.tab-content').find('.tab').eq(getIndex).show();
+		})
+
+		// back page navigation redirect 
+
+		$('.back').click(function(){
+			window.history.back();
 		})
 
 	})
