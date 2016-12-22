@@ -59,6 +59,16 @@
 			window.history.back();
 		})
 
+		// tab chart 
+		
+		$('.site-chart-tab .tab li').click(function(){
+			$(this).siblings('li').removeClass('active');
+			$(this).addClass('active');
+			var getIndex = $(this).index();
+			$(this).parents('.site-chart-tab').find('.content').removeClass('active');
+			$(this).parents('.site-chart-tab').find('.content').eq(getIndex).addClass('active');
+		})
+
 	})
 	
 })(jQuery);
