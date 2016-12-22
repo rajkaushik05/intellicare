@@ -334,13 +334,20 @@
                     </div>
 
                     <!-- two graphs -->
-                    <div class="flex-row two-column-graph">
+                    <div class="flex-row two-column-graph chart-tab site-chart-tab">
                         <!-- graph-info -->
                         <div class="soap-consumption graph-info  col-4">
                             <h2>Soap consumption based on sites</h2>
                             <p class="note">*Note - Hover and select map location to view soap consumption in right chart</p>
                             <div class="graph-view">
-                                <img src="img/map.png" alt="map">
+                                <ul class="flex-row tab">
+                                    <li class="active">Site-1</li>
+                                    <li>Site-2</li>
+                                    <li>Site-3</li>
+                                    <li>Site-4</li>
+                                    <li>Site-5</li>
+                                    <li>Site-6</li>
+                                </ul>
                             </div>
                         </div>
                         <!-- graph-info -->
@@ -355,7 +362,26 @@
                             </div>
 
                             <div class="graph-view">
-                                <img src="img/graph-2.jpg" alt="map">
+                                <div class="tab-content">
+                                    <div class="content active">
+                                        <div id="SoapConsumptionInMT-1"></div>
+                                    </div>
+                                    <div class="content">
+                                        <div id="SoapConsumptionInMT-2"></div>
+                                    </div>
+                                    <div class="content">
+                                        <h2>Space for site - 3 Graph Chart</h2>
+                                    </div>
+                                    <div class="content">
+                                        <h2>Space for site - 4 Graph Chart</h2>
+                                    </div>
+                                    <div class="content">
+                                        <h2>Space for site - 5 Graph Chart</h2>
+                                    </div>
+                                    <div class="content">
+                                        <h2>Space for site - 6 Graph Chart</h2>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -363,27 +389,15 @@
                 </div>
             </div>
 
-            
-
-
-
-            
-            
-
-
-
-            <!-- graph-info -->
-            <!-- <div class="graph-info">
-                <div class="graph-view">
-                    
-                </div>
-            </div> -->
-
         </section>
 
         <!-- vendor js -->
         <script src="js/vendor/jquery-1.12.0.min.js"></script>
+        <!-- hight chart library cnd url -->
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <!-- custom js -->
         <script src="js/main.js"></script>
+        <script src="js/chart-custom-1.js"></script>
     </body>
 </html>

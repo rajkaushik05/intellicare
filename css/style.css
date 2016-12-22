@@ -1071,4 +1071,41 @@
 .soap-consumption .graph-view img {
   opacity: .5; }
 
+/* tab-chart */
+/* line 660, ../sass/pages/_details.scss */
+.site-chart-tab .tab {
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap; }
+  /* line 665, ../sass/pages/_details.scss */
+  .site-chart-tab .tab li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 40px;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    color: #1ea1ed;
+    width: 48%;
+    box-sizing: border-box;
+    margin: 0 1% 15px;
+    text-align: center;
+    box-shadow: 2px 2px 1px rgba(68, 68, 68, 0.22);
+    transition: all .2s; }
+    /* line 678, ../sass/pages/_details.scss */
+    .site-chart-tab .tab li.active {
+      background-color: #1ea1ed;
+      color: #fff; }
+/* line 685, ../sass/pages/_details.scss */
+.site-chart-tab .tab-content .content {
+  display: none;
+  width: 100%; }
+  /* line 688, ../sass/pages/_details.scss */
+  .site-chart-tab .tab-content .content.active {
+    display: block; }
+  /* line 691, ../sass/pages/_details.scss */
+  .site-chart-tab .tab-content .content h2 {
+    margin-top: 80px;
+    text-align: center; }
+
 /*# sourceMappingURL=style.css.map */
