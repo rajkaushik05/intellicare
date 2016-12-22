@@ -1,3 +1,4 @@
+// Soap Consumption In Regions
 $(function () {
     Highcharts.chart('soapConsumptionChart', {
         title: {
@@ -22,27 +23,144 @@ $(function () {
                 color: '#808080'
             }]
         },
-        tooltip: {
-            valueSuffix: '°C'
+        credits: {
+            text: '',
+            href: 'http://srijan.net/'
         },
         legend: {
-            layout: 'vertical',
+            layout: 'horizontal',
             align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
+            borderColor: "#1ea1ed",
+            borderRadius: 20,
+            itemStyle: {
+                "color": "#7d7d7d",  
+                "fontSize": "14px", 
+                "fontWeight": "normal"
+            },
+            itemDistance: 15,
+            itemMarginTop: 10
+        },
+
+        series: [{
+            name: 'Restroom2',
+            data: [5, 50, 100, 200, 300, 400, 500, 600, 700, 750, 500, 400, 200, 100],
+            lineColor: "#e0e0e0",
+            
+            marker: {
+                symbol: 'circle',
+                fillColor: '#e0e0e0',
+                lineColor: "#fff",
+                radius: 6
+            }
+        }, {
+            name: 'Grocery',
+            data: [10, 40, 90, 190, 250, 440, 600, 610, 720, 710, 400, 300, 220, 60],
+            lineColor: "#5bcef6",
+            marker: {
+                symbol: 'circle',
+                fillColor: '#5bcef6',
+                radius: 6           }
+        }, {
+            name: 'Kitchen',
+            data: [5, 30, 60, 160, 240, 430, 650, 670, 700, 650, 440, 330, 180, 20],
+            lineColor: "#84de63",
+            marker: {
+                symbol: 'circle',
+                fillColor: '#84de63',
+                radius: 6
+            }
+        }, {
+            name: 'Restroom',
+            data: [5, 20, 30, 50, 150, 200, 250, 400, 250, 150, 100, 50, 20, 10],
+            lineColor: "#eea166",
+            marker: {
+                symbol: 'circle',
+                fillColor: '#eea166',
+                radius: 6
+            }
+        },{
+            name: 'Meeting Room',
+            data: [5, 20, 10, 50, 100, 140, 250, 350, 380, 220, 150, 100, 50, 40],
+            lineColor: "#3e3e44",
+            marker: {
+                symbol: 'circle',
+                fillColor: '#3e3e44',
+                radius: 6
+            }
+        }]
+    });
+});
+
+
+// Overall Hand Hygiene Health
+$(function () {
+    Highcharts.chart('overallHandHygieneHealth', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        credits: {
+            text: '',
+            href: 'http://srijan.net/'
+        },
+        legend: {
+            layout: 'horizontal',
+            align: 'right',
+            borderColor: "#1ea1ed",
+            borderRadius: 20,
+            itemStyle: {
+                "color": "#7d7d7d",  
+                "fontSize": "14px", 
+                "fontWeight": "normal"
+            },
+            itemDistance: 15,
+            itemMarginTop: 10
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Number of washes'
+            },
+            categories: ['0', '10', '15']
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
         },
         series: [{
-            name: 'Tokyo',
-            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-        }, {
-            name: 'New York',
-            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-        }, {
-            name: 'Berlin',
-            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-        }, {
-            name: 'London',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+            name: 'Compare',
+            data: [138, 227, 340, 319, 370, 239, 350],
+            lineColor: "#6eaa55",
+            
+            marker: {
+                symbol: 'circle',
+                fillColor: '#6eaa55',
+                lineColor: "#6eaa55",
+                radius: 6
+            }
+        },
+        {
+            name: 'Selected',
+            data: [198, 267, 320, 389, 430, 209, 400],
+            lineColor: "#6dc0fa",
+            
+            marker: {
+                symbol: 'circle',
+                fillColor: '#6dc0fa',
+                lineColor: "#6dc0fa",
+                radius: 6
+            }
         }]
     });
 });
