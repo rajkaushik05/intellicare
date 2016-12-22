@@ -30,6 +30,17 @@
 				$(this).children('.text').text('View Details');
 				flag = true;
 			}
+			debugger;
+			$('.bxslider').bxSlider({
+	            slideWidth: 235,
+	            slideMargin: 10,
+	            minSlides: 1,
+	            maxSlides: 4,
+	            infiniteLoop: false,
+	            responsive: true,
+	            controls: true,
+		        pager: false
+	        });
 			
 
 			e.preventDefault();
