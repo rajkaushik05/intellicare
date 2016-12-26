@@ -38,7 +38,8 @@
 	            infiniteLoop: false,
 	            responsive: true,
 	            controls: true,
-		        pager: false
+		        pager: false,
+		        hideControlOnEnd: true
 	        });
 			
 
@@ -49,8 +50,8 @@
 			$(this).siblings('li').removeClass('active');
 			$(this).addClass('active');
 			var getIndex = $(this).index();
-			$(this).parents('.bxslider-wrap').siblings('.tab-content').find('.tab').hide();
-			$(this).parents('.bxslider-wrap').siblings('.tab-content').find('.tab').eq(getIndex).show();
+			$(this).parents('.bxslider-wrap').siblings('.tab-content').find('.tab').removeClass('active');
+			$(this).parents('.bxslider-wrap').siblings('.tab-content').find('.tab').eq(getIndex).addClass('active');
 		})
 
 		// back page navigation redirect 
@@ -69,6 +70,20 @@
 			$(this).parents('.site-chart-tab').find('.content').eq(getIndex).addClass('active');
 		})
 
+		// site details table click on tr redirect on didecated page
+
+		$('.site-details tbody tr').click(function(){
+			var getHref = $(this).find('a').attr('href');
+			window.location.href = getHref;
+		})
+
+		// dispenser item overlap hide and show 
+		$('.quick-action-btn').click(function(){
+			$(this).siblings('.quick-action').addClass('show');
+		})
+		$('.quick-action .close').click(function(){
+			$(this).parent().removeClass('show');
+		})
 	})
 	
 })(jQuery);

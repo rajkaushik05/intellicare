@@ -209,9 +209,8 @@
 }
 
 .graph-view {
-	overflow-x: auto;
 	position: relative;
-
+	overflow: auto;
 	img {
 		width: 100%;
 	}
@@ -219,6 +218,7 @@
 	table {
 		width: 100%;
 		margin-top: 12px;
+		min-width: 558px;
 	}
 	thead {
 		background-color: #f8f8f8;
@@ -242,6 +242,7 @@
 			border-bottom: 1px solid #ebebeb;
 			background-color: #fff;
 			transition: all .2s;
+			cursor: pointer;
 			&:hover {
 				background-color: #6dc0fa;
 				td, a {
@@ -288,7 +289,7 @@
 }
 
 .two-column-graph {
-	@media (max-width: 767px)  {
+	@media (max-width: 1179px)  {
 		width: 100%;
 		flex-direction: column;
 		-webkit-flex-direction: column;
@@ -296,7 +297,7 @@
 	}
 
 	.graph-info  {
-		@media (max-width: 767px)  {
+		@media (max-width: 1179px)  {
 			width: 100%;
 		}
 		&:first-child {
@@ -573,17 +574,25 @@
 		.bx-prev {
 			width: 36px;
 			height: 36px;
-			background: url('../img/crousel-control.png') center center no-repeat;
+			background: url('../img/crousel-control-active.png') center center no-repeat;
 			transform: rotate(180deg);
 			left: -50px;
 			z-index: 8;
+			&.disabled {
+				display: inline-block !important;
+				background: url('../img/crousel-control.png') center center no-repeat;
+			}
 		}
 		.bx-next {
 			width: 36px;
 			height: 36px;
-			background: url('../img/crousel-control.png') center center no-repeat;
+			background: url('../img/crousel-control-active.png') center center no-repeat;
 			right: -40px;
 			z-index: 8;
+			&.disabled {
+				display: inline-block !important;
+				background: url('../img/crousel-control.png') center center no-repeat;
+			}
 		}
 	}
 	&.style-change {
@@ -603,6 +612,9 @@
     		padding: 30px 10px 10px;
     		@media (min-width: 600px) {
 				margin-top: -35px;
+			}
+			&.active {
+				display: block;
 			}
     	}
     }
