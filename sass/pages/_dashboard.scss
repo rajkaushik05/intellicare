@@ -129,19 +129,29 @@
 
 			.quick-action {
 				position: absolute;
-			    top: -500px;
-			    background-color: rgba(0, 0, 0, 0.79);
+			    background-color: rgba(0, 0, 0, 0.9);
+			    bottom: -500px;
 			    color: #fff;
 			    width: 100%;
+			    padding-top: 40px;
 			    left: 0;
 			    right: 0;
 			    height: 100%;
 			    font-size: 16px;
 			    transition: all .2s;
 			    -webkit-transition: all .2s;
-			    p span {
-			    	display: block;
-			    	color: #989898;
+			    box-sizing: border-box;
+			    button {
+			    	display: inline-block;
+			    	border: 1px solid #fff;
+			    	margin-bottom: 20px;
+			    	&:hover {
+			    		background-color: #fff;
+			    		color: #444;
+			    		a {
+							color: #444;			    			
+			    		}
+			    	}
 			    }
 			    a {
 			    	color: #fff;
@@ -151,7 +161,7 @@
 			    	cursor: pointer;
 			    }
 			    &.show {
-					top: 0;
+					bottom: 0;
 			    }
 			}
 		}
