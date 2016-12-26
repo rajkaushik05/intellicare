@@ -217,7 +217,7 @@
                             <div class="bxslider-block" id="bxsliderBlock">
                                 <div class="bxslider-wrap">
                                     <ul class="bxslider dis-items">
-                                      <li class="item">
+                                      <li class="item active">
                                             <span class="item-icon">
                                                 <img src="img/info.png" alt="">
                                             </span>
@@ -234,9 +234,6 @@
                                             <!-- <a href="#" class="btn btn-primary">view details</a> -->
                                       </li>
                                       <li class="item">
-                                            <span class="item-icon">
-                                                <img src="img/yes-icon.png" alt="">
-                                            </span>
                                             <p class="update">last updated <span>2 hours ago</span></p>
                                             <h3>Grocery Area</h3>
                                             <div class="status">
@@ -266,9 +263,6 @@
                                             
                                       </li>
                                       <li class="item">
-                                            <span class="item-icon">
-                                                <img src="img/yes-icon.png" alt="">
-                                            </span>
                                             <p class="update">last updated <span>2 hours ago</span></p>
                                             <h3>Restroom 1 Area</h3>
                                             <div class="status">
@@ -281,9 +275,6 @@
                                             <p class="region">Number of pushes: <strong>200</strong></p>
                                       </li>
                                       <li class="item">
-                                            <span class="item-icon">
-                                                <img src="img/wifi-active.png" alt="">
-                                            </span>
                                             <p class="update">last updated <span>2 hours ago</span></p>
                                             <h3>Kitchen Area</h3>
                                             <div class="status">
@@ -299,55 +290,87 @@
                                 </div>
                                 <div class="tab-content dispensers-items five-items" id="bxsliderContent">
                                     <!-- tab content -->
-                                    <div class="tab">
+                                    <div class="tab active">
                                         <div class="flex-row dispenser items">
                                             <!-- item repeat -->
                                             <div class="item">
-                                                <!-- <span class="item-icon">
-                                                    <img src="img/wifi-inactive.png" alt="">
-                                                </span> -->
                                                 <p class="update">Refilled <span>2 hours ago</span></p>
-                                                <h3>H125</h3>
+                                                <h3>H110</h3>
                                                 <img src="img/status-1.png" class="status-img" alt="">
-                                                <p class="pushes"><strong>496 </strong>Pushes</p>
+                                                <p class="pushes"><strong>400 </strong>Pushes</p>
                                                 <p class="region">Region: <strong>Grocery Area</strong></p>
-                                                <a href="#" class="btn btn-primary">Quick action</a>
+                                                <button class="btn btn-primary quick-action-btn">Quick action</button>
+                                                <div class="quick-action">
+                                                    <p><span>Region: </span> Grocery Area</p>
+                                                    <p><span>Name: </span>John Doe</p>
+                                                    <p><span>Phone: </span>+91 9898989898</p>
+                                                    <p><span>Email: </span><a href="mailto:info@domain.com">info@domain.com</a></p>
+                                                    <i class="fa fa-times-circle close"></i>
+                                                </div>
                                             </div>
                                             <!-- item repeat -->
                                             <div class="item">
-                                                <p class="update">Refilled <span>2 hours ago</span></p>
-                                                <h3>H125</h3>
+                                                <p class="update">Refilled <span>15 mins ago</span></p>
+                                                <h3>H130</h3>
                                                 <img src="img/status-1.png" class="status-img" alt="">
-                                                <p class="pushes"><strong>496 </strong>Pushes</p>
-                                                <p class="region">Region: <strong>Grocery Area</strong></p>
-                                                <a href="#" class="btn btn-primary">Quick action</a>
+                                                <p class="pushes"><strong>300 </strong>Pushes</p>
+                                                <p class="region">Region: <strong>Kitchen Area</strong></p>
+                                                <button class="btn btn-primary quick-action-btn">Quick action</button>
+                                                <div class="quick-action">
+                                                    <p><span>Region: </span> Kitchen Area</p>
+                                                    <p><span>Name: </span>John Doe</p>
+                                                    <p><span>Phone: </span>+91 9898989898</p>
+                                                    <p><span>Email: </span><a href="mailto:info@domain.com">info@domain.com</a></p>
+                                                    <i class="fa fa-times-circle close"></i>
+                                                </div>
                                             </div>
                                             <!-- item repeat -->
                                             <div class="item">
-                                                <p class="update">Refilled <span>2 hours ago</span></p>
-                                                <h3>H125</h3>
+                                                <p class="update">Refilled <span>30 mins ago</span></p>
+                                                <h3>H100</h3>
                                                 <img src="img/status-2.png" class="status-img" alt="">
-                                                <p class="pushes"><strong>496 </strong>Pushes</p>
-                                                <p class="region">Region: <strong>Grocery Area</strong></p>
-                                                <a href="#" class="btn btn-primary">Quick action</a>
+                                                <p class="pushes"><strong>398 </strong>Pushes</p>
+                                                <p class="region">Region: <strong>Restroom1 Area</strong></p>
+                                                <button class="btn btn-primary quick-action-btn">Quick action</button>
+                                                <div class="quick-action">
+                                                    <p><span>Region: </span> Restroom1 Area</p>
+                                                    <p><span>Name: </span>John Doe</p>
+                                                    <p><span>Phone: </span>+91 9898989898</p>
+                                                    <p><span>Email: </span><a href="mailto:info@domain.com">info@domain.com</a></p>
+                                                    <i class="fa fa-times-circle close"></i>
+                                                </div>
+                                            </div>
+                                            <!-- item repeat -->
+                                            <div class="item disabled">
+                                                <p class="update">Refilled <span>4 hours ago</span></p>
+                                                <h3>H90</h3>
+                                                <img src="img/fill-status-off.png" class="status-img" alt="">
+                                                <p class="pushes"><strong>510 </strong>Pushes</p>
+                                                <p class="region">Region: <strong>Meeting Area</strong></p>
+                                                <button class="btn btn-primary quick-action-btn">Quick action</button>
+                                                <div class="quick-action">
+                                                    <p><span>Region: </span> Meeting Area</p>
+                                                    <p><span>Name: </span>John Doe</p>
+                                                    <p><span>Phone: </span>+91 9898989898</p>
+                                                    <p><span>Email: </span><a href="mailto:info@domain.com">info@domain.com</a></p>
+                                                    <i class="fa fa-times-circle close"></i>
+                                                </div>
                                             </div>
                                             <!-- item repeat -->
                                             <div class="item">
-                                                <p class="update">Refilled <span>2 hours ago</span></p>
-                                                <h3>H125</h3>
-                                                <img src="img/status-3.png" class="status-img" alt="">
-                                                <p class="pushes"><strong>496 </strong>Pushes</p>
-                                                <p class="region">Region: <strong>Grocery Area</strong></p>
-                                                <a href="#" class="btn btn-primary">Quick action</a>
-                                            </div>
-                                            <!-- item repeat -->
-                                            <div class="item">
-                                                <p class="update">Refilled <span>2 hours ago</span></p>
-                                                <h3>H125</h3>
+                                                <p class="update">Refilled <span>6 hours ago</span></p>
+                                                <h3>H75</h3>
                                                 <img src="img/status-1.png" class="status-img" alt="">
-                                                <p class="pushes"><strong>496 </strong>Pushes</p>
-                                                <p class="region">Region: <strong>Grocery Area</strong></p>
-                                                <a href="#" class="btn btn-primary">Quick action</a>
+                                                <p class="pushes"><strong>306 </strong>Pushes</p>
+                                                <p class="region">Region: <strong>Restroom-2 Area</strong></p>
+                                                <button class="btn btn-primary quick-action-btn">Quick action</button>
+                                                <div class="quick-action">
+                                                    <p><span>Region: </span> Restroom-2 Area</p>
+                                                    <p><span>Name: </span>John Doe</p>
+                                                    <p><span>Phone: </span>+91 9898989898</p>
+                                                    <p><span>Email: </span><a href="mailto:info@domain.com">info@domain.com</a></p>
+                                                    <i class="fa fa-times-circle close"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
