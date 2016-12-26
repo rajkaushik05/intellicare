@@ -82,7 +82,7 @@
 			$(this).siblings('.quick-action').addClass('show');
 		})
 		$('.quick-action .close').click(function(){
-			$(this).parent().removeClass('show');
+			$(this).parents('.quick-action').removeClass('show');
 		})
 	})
 	
