@@ -92,16 +92,52 @@ $(function () {
 });
 
 
-
-
-
-
 // Overall Hand Hygiene Health
 
 
 $(function () {
 
+    var hygieneHealth = [
+        {
+            name: 'site-1',
+            data: [138, 227, 340, 319, 370, 239, 350],
+            lineColor: "#6eaa55",
+            
+            marker: {
+                symbol: 'circle',
+                fillColor: '#6eaa55',
+                lineColor: "#6eaa55",
+                radius: 6
+            }
+        },
+        {
+            name: 'site-2',
+            data: [158, 200, 310, 319, 220, 100, 50],
+            lineColor: "#eea166",
+            marker: {
+                symbol: 'circle',
+                fillColor: '#eea166',
+                lineColor: "#eea166",
+                radius: 6
+            }
+        },
+        {
+            name: 'Site-3',
+            data: [198, 267, 320, 389, 430, 209, 400],
+            lineColor: "#6dc0fa",
+            
+            marker: {
+                symbol: 'circle',
+                fillColor: '#6dc0fa',
+                lineColor: "#6dc0fa",
+                radius: 6
+            }
+        }
+    ];
 
+    // default value show
+    
+    
     // High chart code here
     var chart = Highcharts.chart('overallHandHygieneHealth', {
         chart: {
@@ -147,61 +183,32 @@ $(function () {
                 enableMouseTracking: false
             }
         },
-        series: [
-            {
-                name: 'site-1',
-                data: [138, 227, 340, 319, 370, 239, 350],
-                lineColor: "#6eaa55",
-                
-                marker: {
-                    symbol: 'circle',
-                    fillColor: '#6eaa55',
-                    lineColor: "#6eaa55",
-                    radius: 6
-                }
-            }
-        ]
+        series: []
     });
 
     var compareSite = $('#siteCompareTwo select').val();
-    $('#siteCompareTwo select').on('change', function(){
-        var thisVal = $(this).val();
-        if (chart.series.length === 2 && thisVal == 'site-3') {
-            chart.series[1].remove();
-            
-            chart.addSeries({
-                name: 'Site-3',
-                data: [158, 200, 310, 319, 220, 100, 50],
-                lineColor: "#eea166",
+    // $('#siteCompareTwo select').on('change', function(){
+    //     var thisVal = $(this).val();
+    //     if (chart.series.length === 2 && thisVal == 'site-3') {
+    //         chart.series.pop();
+    //         Highcharts.chart('overallHandHygieneHealth');
+    //         chart.addSeries({
+    //             name: 'Site-3',
+    //             data: [158, 200, 310, 319, 220, 100, 50],
+    //             lineColor: "#eea166",
                 
-                marker: {
-                    symbol: 'circle',
-                    fillColor: '#eea166',
-                    lineColor: "#eea166",
-                    radius: 6
-                }
-            });
-        }
-        if (chart.series.length === 2 && thisVal == 'site-2') {
-            chart.series[1].remove();
-            chart.addSeries({
-                name: 'Site-2',
-                data: [198, 267, 320, 389, 430, 209, 400],
-                lineColor: "#6dc0fa",
-                
-                marker: {
-                    symbol: 'circle',
-                    fillColor: '#6dc0fa',
-                    lineColor: "#6dc0fa",
-                    radius: 6
-                }
-            });
-        }   
-    })
+    //             marker: {
+    //                 symbol: 'circle',
+    //                 fillColor: '#eea166',
+    //                 lineColor: "#eea166",
+    //                 radius: 6
+    //             }
+    //         });
+    //     }
+    // })
 
     $('#handHygieneHealth #compareSiteBtn').click(function(){
         if (chart.series.length === 1 && compareSite == 'site-2') {
-            
             chart.addSeries({
                 name: 'Site-2',
                 data: [198, 267, 320, 389, 430, 209, 400],

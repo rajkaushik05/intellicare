@@ -1149,16 +1149,23 @@
     .site-chart-tab .tab li.active {
       background-color: #1ea1ed;
       color: #fff; }
-/* line 697, ../sass/pages/_details.scss */
+    /* line 694, ../sass/pages/_details.scss */
+    .site-chart-tab .tab li:nth-child(3) {
+      width: 100%; }
+/* line 700, ../sass/pages/_details.scss */
 .site-chart-tab .tab-content .content {
   display: none;
   width: 100%; }
-  /* line 700, ../sass/pages/_details.scss */
+  /* line 703, ../sass/pages/_details.scss */
   .site-chart-tab .tab-content .content.active {
     display: block; }
-  /* line 703, ../sass/pages/_details.scss */
+  /* line 706, ../sass/pages/_details.scss */
   .site-chart-tab .tab-content .content h2 {
     margin-top: 80px;
     text-align: center; }
+
+/* line 715, ../sass/pages/_details.scss */
+#siteCompareTwo {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

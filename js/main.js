@@ -84,6 +84,14 @@
 		$('.quick-action .close').click(function(){
 			$(this).parents('.quick-action').removeClass('show');
 		})
+
+		// compare site Overall Hand Hygiene Health
+
+		$('#handHygieneHealth #compareSiteBtn').click(function(){
+			$('#handHygieneHealth #siteCompareTwo').show();
+		})
+
+
 	})
 	
 })(jQuery);
