@@ -135,19 +135,25 @@
                 </nav>
                 <div class="dashboard">
                     <!-- Header filter section -->
-                    <div class="flex-row filter-details">
+                    <div class="flex-row filter-details" id="handHygieneHealth">
                         <div class="heading">
                             <h1><span class="back"><i class="fa fa-angle-left"></i></span>Overall Hand Hygiene Health <i class="que-icon"></i></h1>    
                         </div>
-                        <div class="flex-row filter">
+                        <div class="flex-row filter" id="siteCompareOne">
                             <label for="">Selected Site - </label>
                             <select name="" id="" class="custom-select">
-                                <option value="">Site-1</option>
-                                <option value="">Site-2</option>
-                                <option value="">Site-3</option>
+                                <option value="site-1" selected="selected">Site-1</option>
                             </select>
-                            <button class="btn btn-primary">Compare</button>
                         </div>
+                        <div class="flex-row filter" id="siteCompareTwo">
+                            <label for="">Compare Site - </label>
+                            <select name="" id="" class="custom-select">
+                                <option value="site-2" selected="selected">Site-2</option>
+                                <option value="site-3">Site-3</option>
+                                <option value="site-4">Site-4</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" id="compareSiteBtn">Compare</button>
                     </div>
                     
 
@@ -347,7 +353,7 @@
                             <div class="item">
                                 <p class="update">Refilled <span>15 mins ago</span></p>
                                 <h3>H130</h3>
-                                <img src="img/status-1.png" class="status-img" alt="">
+                                <img src="img/status-186.png" class="status-img" alt="">
                                 <p class="pushes"><strong>300 </strong>Pushes</p>
                                 <p class="region">Region: <strong>Kitchen Area</strong></p>
                                 <button class="btn btn-primary quick-action-btn">Quick action</button>
