@@ -691,6 +691,9 @@
 				background-color: #1ea1ed;
 				color: #fff;
 			}
+			&:nth-child(3){
+				width: 100%;
+			}
 		}
 	}
 	.tab-content {
@@ -706,4 +709,9 @@
 			}
 		}
 	}
+}
+
+
+#siteCompareTwo {
+	display: none;
 }
