@@ -1,17 +1,24 @@
 // Soap Consumption In Regions
 $(function () {
-    Highcharts.chart('soapConsumptionChart', {
+    // assign veriable
+    categoriesDefault = ['7:00', '8:00', '9:00', '10:00', '11:00', '12:00', 
+    '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
+    categoriesAdd = ['21:00', '22:00', '23:00', '24:00', '1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', "9:00"];
+
+    categoriesAdded = categoriesDefault.concat(categoriesAdd);
+
+    var chart = Highcharts.chart('soapConsumptionChart', {
         title: {
             text: '',
             x: -20 //center
         },
+        type: 'spline',
         subtitle: {
             text: '',
             x: -20
         },
         xAxis: {
-            categories: ['7:00', '8:00', '9:00', '10:00', '11:00', '12:00',
-                '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
+            categories: categoriesDefault
         },
         yAxis: {
             title: {
@@ -43,7 +50,7 @@ $(function () {
 
         series: [{
             name: 'Restroom2',
-            data: [5, 50, 100, 200, 300, 400, 500, 600, 700, 750, 500, 400, 200, 100],
+            data: [5, 50, 100, 200, 300, 400, 500, 600, 700, 750, 500, 400, 200, 100, 5, 50, 100, 200, 300, 400, 500, 600, 700, 750, 500, 400],
             lineColor: "#e0e0e0",
             
             marker: {
@@ -54,7 +61,7 @@ $(function () {
             }
         }, {
             name: 'Grocery',
-            data: [10, 40, 90, 190, 250, 440, 600, 610, 720, 710, 400, 300, 220, 60],
+            data: [10, 40, 90, 190, 250, 440, 600, 610, 720, 710, 400, 300, 220, 60, 10, 40, 90, 190, 250, 440, 600, 610, 720, 710, 400, 300],
             lineColor: "#5bcef6",
             marker: {
                 symbol: 'circle',
@@ -62,7 +69,7 @@ $(function () {
                 radius: 6           }
         }, {
             name: 'Kitchen',
-            data: [5, 30, 60, 160, 240, 430, 650, 670, 700, 650, 440, 330, 180, 20],
+            data: [5, 30, 60, 160, 240, 430, 650, 670, 700, 650, 440, 330, 180, 20, 5, 30, 60, 160, 240, 430, 650, 670, 700, 650, 440, 330],
             lineColor: "#84de63",
             marker: {
                 symbol: 'circle',
@@ -71,7 +78,7 @@ $(function () {
             }
         }, {
             name: 'Restroom',
-            data: [5, 20, 30, 50, 150, 200, 250, 400, 250, 150, 100, 50, 20, 10],
+            data: [5, 20, 30, 50, 150, 200, 250, 400, 250, 150, 100, 50, 20, 10, 5, 20, 30, 50, 150, 200, 250, 400, 250, 150, 100, 50],
             lineColor: "#eea166",
             marker: {
                 symbol: 'circle',
@@ -80,7 +87,7 @@ $(function () {
             }
         },{
             name: 'Meeting Room',
-            data: [5, 20, 10, 50, 100, 140, 250, 350, 380, 220, 150, 100, 50, 40],
+            data: [5, 20, 10, 50, 100, 140, 250, 350, 380, 220, 150, 100, 50, 40, 5, 20, 10, 50, 100, 140, 250, 350, 380, 220, 150, 100],
             lineColor: "#3e3e44",
             marker: {
                 symbol: 'circle',
@@ -89,6 +96,27 @@ $(function () {
             }
         }]
     });
+    chart.xAxis.forEach(function(d){
+        d.setExtremes(0, 14);
+    })
+
+    $('#next12HoursSoapConsumption').click(function(){
+        chart.xAxis.forEach(function(d){
+            d.setExtremes(0, 26);
+        })
+        chart.xAxis[0].setCategories(categoriesAdded);
+        $('#currentHoursSoapConsumption').attr('disabled', false);
+    })
+
+    // back button click show default data
+    $('#currentHoursSoapConsumption').click(function(){
+        chart.xAxis.forEach(function(d){
+            d.setExtremes(0, 14);
+        })
+        chart.xAxis[0].setCategories(categoriesDefault);
+    });
+    
+
 });
 
 
