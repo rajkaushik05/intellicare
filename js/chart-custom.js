@@ -167,6 +167,7 @@ $(function () {
     $('#siteCompareTwo select').on('change', function(){
         var thisVal = $(this).val();
         if (chart.series.length === 2 && thisVal == 'site-3') {
+            $(this).css('border-color','#eea166');
             chart.series[1].remove();
             
             chart.addSeries({
@@ -183,6 +184,7 @@ $(function () {
             });
         }
         if (chart.series.length === 2 && thisVal == 'site-2') {
+            $(this).css('border-color','#6dc0fa');
             chart.series[1].remove();
             chart.addSeries({
                 name: 'Site-2',
@@ -201,7 +203,8 @@ $(function () {
 
     $('#handHygieneHealth #compareSiteBtn').click(function(){
         if (chart.series.length === 1 && compareSite == 'site-2') {
-            
+            $('#siteCompareTwo select').css('border-color','#6dc0fa');
+            $('#siteCompareOne select').css('border-color','#6eaa55');
             chart.addSeries({
                 name: 'Site-2',
                 data: [198, 267, 320, 389, 430, 209, 400],
