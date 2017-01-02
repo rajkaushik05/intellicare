@@ -609,7 +609,7 @@
     .tab-content {
     	.tab {
     		display: none;
-    		padding: 30px 10px 10px;
+    		padding: 0 10px;
     		@media (min-width: 600px) {
 				margin-top: -35px;
 			}
@@ -665,9 +665,27 @@
 			opacity: .5;
 		}
 	}
+	.tab {
+		li.site-1.active {
+			background-color: #6eaa55;
+		}
+		li.site-2.active {
+			background-color: #1ea1ed;
+		}
+		li.site-3.active {
+			background-color: #eea166;
+		}
+		li.site-4.active {
+			background-color: #dc2323;
+		}
+		li.site-5.active {
+			background-color: #3e3e44;
+		}
+	}
 }
 
 /* tab-chart */
+
 .site-chart-tab {
 	.tab {
 		margin: 0;
@@ -680,7 +698,6 @@
 			padding: 10px 40px;
 			font-size: 16px;
 			background-color: #f8f8f8;
-			color: #1ea1ed;
 			width: 50%;
 			box-sizing: border-box;
 			text-align: center;
@@ -688,7 +705,6 @@
 			transition: all .2s;
 			border-bottom: 1px solid #e2e2e2;
 			&.active {
-				background-color: #1ea1ed;
 				color: #fff;
 			}
 			&:nth-child(3){
