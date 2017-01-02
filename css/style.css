@@ -1076,7 +1076,7 @@
   /* line 610, ../sass/pages/_details.scss */
   .bxslider-block .tab-content .tab {
     display: none;
-    padding: 30px 10px 10px; }
+    padding: 0 10px; }
     @media (min-width: 600px) {
       /* line 610, ../sass/pages/_details.scss */
       .bxslider-block .tab-content .tab {
@@ -1123,48 +1123,61 @@
 /* line 664, ../sass/pages/_details.scss */
 .soap-consumption .graph-view img {
   opacity: .5; }
+/* line 669, ../sass/pages/_details.scss */
+.soap-consumption .tab li.site-1.active {
+  background-color: #6eaa55; }
+/* line 672, ../sass/pages/_details.scss */
+.soap-consumption .tab li.site-2.active {
+  background-color: #1ea1ed; }
+/* line 675, ../sass/pages/_details.scss */
+.soap-consumption .tab li.site-3.active {
+  background-color: #eea166; }
+/* line 678, ../sass/pages/_details.scss */
+.soap-consumption .tab li.site-4.active {
+  background-color: #dc2323; }
+/* line 681, ../sass/pages/_details.scss */
+.soap-consumption .tab li.site-5.active {
+  background-color: #3e3e44; }
 
 /* tab-chart */
-/* line 672, ../sass/pages/_details.scss */
+/* line 690, ../sass/pages/_details.scss */
 .site-chart-tab .tab {
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap; }
-  /* line 677, ../sass/pages/_details.scss */
+  /* line 695, ../sass/pages/_details.scss */
   .site-chart-tab .tab li {
     display: inline-block;
     cursor: pointer;
     padding: 10px 40px;
     font-size: 16px;
     background-color: #f8f8f8;
-    color: #1ea1ed;
     width: 50%;
     box-sizing: border-box;
     text-align: center;
     box-shadow: 2px 2px 1px rgba(68, 68, 68, 0.22);
     transition: all .2s;
     border-bottom: 1px solid #e2e2e2; }
-    /* line 690, ../sass/pages/_details.scss */
+    /* line 707, ../sass/pages/_details.scss */
     .site-chart-tab .tab li.active {
-      background-color: #1ea1ed;
       color: #fff; }
-    /* line 694, ../sass/pages/_details.scss */
+    /* line 710, ../sass/pages/_details.scss */
     .site-chart-tab .tab li:nth-child(3) {
       width: 100%; }
-/* line 700, ../sass/pages/_details.scss */
+/* line 716, ../sass/pages/_details.scss */
 .site-chart-tab .tab-content .content {
   display: none;
   width: 100%; }
-  /* line 703, ../sass/pages/_details.scss */
+  /* line 719, ../sass/pages/_details.scss */
   .site-chart-tab .tab-content .content.active {
     display: block; }
-  /* line 706, ../sass/pages/_details.scss */
+  /* line 722, ../sass/pages/_details.scss */
   .site-chart-tab .tab-content .content h2 {
     margin-top: 80px;
     text-align: center; }
 
-/* line 715, ../sass/pages/_details.scss */
+/* line 731, ../sass/pages/_details.scss */
 #siteCompareTwo {
   display: none; }
 
