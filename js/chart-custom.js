@@ -102,7 +102,7 @@ $(function () {
 
     $('#next12HoursSoapConsumption').click(function(){
         chart.xAxis.forEach(function(d){
-            d.setExtremes(0, 26);
+            d.setExtremes(15, 26);
         })
         chart.xAxis[0].setCategories(categoriesAdded);
         $('#currentHoursSoapConsumption').attr('disabled', false);
