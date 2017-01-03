@@ -27,10 +27,16 @@ $(function () {
             text: '',
             href: 'http://srijan.net/'
         },
+        exporting: {
+            enabled: false
+        },
         legend: {
             layout: 'horizontal',
             align: 'right',
-            borderRadius: 20,
+            symbolHeight: 6,
+            symbolWidth: 6,
+            symbolRadius: 6,
+            enabled: false,
             itemStyle: {
                 "fontSize": "14px", 
                 "fontWeight": "normal"
@@ -140,11 +146,17 @@ $(function () {
             text: '',
             href: 'http://srijan.net/'
         },
+        exporting: {
+            enabled: false
+        },
         legend: {
             layout: 'horizontal',
             align: 'right',
             borderColor: "#1ea1ed",
-            borderRadius: 20,
+            symbolHeight: 6,
+            symbolWidth: 6,
+            symbolRadius: 6,
+            enabled: false,
             itemStyle: {
                 "color": "#7d7d7d",  
                 "fontSize": "14px", 

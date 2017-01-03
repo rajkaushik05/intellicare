@@ -22,13 +22,16 @@ $(function () {
         },
         yAxis: {
             title: {
-                text: 'Number of Washes (°C)'
+                text: 'Number of Washes'
             },
             plotLines: [{
                 value: 0,
                 width: 1,
                 color: '#808080'
             }]
+        },
+        exporting: {
+            enabled: false
         },
         credits: {
             text: '',
@@ -38,7 +41,9 @@ $(function () {
             layout: 'horizontal',
             align: 'right',
             borderColor: "#1ea1ed",
-            borderRadius: 20,
+            symbolHeight: 6,
+            symbolWidth: 6,
+            symbolRadius: 6,
             itemStyle: {
                 "color": "#7d7d7d",  
                 "fontSize": "14px", 
@@ -101,15 +106,18 @@ $(function () {
     })
 
     $('#next12HoursSoapConsumption').click(function(){
+        $('#currentHoursSoapConsumption').css('display','inline-block');
+        $(this).css('display', 'none');
         chart.xAxis.forEach(function(d){
             d.setExtremes(15, 26);
         })
         chart.xAxis[0].setCategories(categoriesAdded);
-        $('#currentHoursSoapConsumption').attr('disabled', false);
     })
 
     // back button click show default data
     $('#currentHoursSoapConsumption').click(function(){
+        $('#next12HoursSoapConsumption').css('display','inline-block');
+        $(this).css('display', 'none');
         chart.xAxis.forEach(function(d){
             d.setExtremes(0, 14);
         })
@@ -145,11 +153,17 @@ $(function () {
             text: '',
             href: 'http://srijan.net/'
         },
+        exporting: {
+            enabled: false
+        },
         legend: {
             layout: 'horizontal',
             align: 'right',
             borderColor: "#1ea1ed",
-            borderRadius: 20,
+            symbolHeight: 6,
+            symbolWidth: 6,
+            symbolRadius: 6,
+            enabled: false,
             itemStyle: {
                 "color": "#7d7d7d",  
                 "fontSize": "14px", 
