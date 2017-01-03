@@ -1181,4 +1181,12 @@
 #siteCompareTwo {
   display: none; }
 
+/* line 735, ../sass/pages/_details.scss */
+#currentHoursSoapConsumption {
+  display: none; }
+
+/* line 741, ../sass/pages/_details.scss */
+#handHygieneHealth #siteCompareOne select {
+  border-color: #6eaa55; }
+
 /*# sourceMappingURL=style.css.map */
