@@ -1,12 +1,43 @@
 // Soap Consumption In Regions
 $(function () {
-    // assign veriable
-    categoriesDefault = ['7:00', '8:00', '9:00', '10:00', '11:00', '12:00', 
-    '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
-    categoriesAdd = ['21:00', '22:00', '23:00', '24:00', '1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', "9:00"];
 
-    categoriesAdded = categoriesDefault.concat(categoriesAdd);
+    // variable define
+    var previous12Hours = [];
+    var next12Hours = [];
 
+
+    // logic for get current hour and next hours
+    var getHour = document.getElementById('getHour');
+    var getTime = new Date();
+    var currentHours = getTime.getHours();
+    var hourFormat = 24;
+
+    // previous 12 hours get
+    for(var i=0; i<12; i++){
+        var hr = currentHours - i;
+        if(hr >= 1){
+            previous12Hours.push(hr);       
+        }else {
+            hourFormat = hourFormat - 1;
+            previous12Hours.push(hourFormat);   
+        }   
+    }
+    previous12Hours.reverse();
+
+    // next 12 hours get
+    var count = 1;
+    for(var i=1; i<=12; i++){
+        var hr = currentHours + i;
+        if(hr <= 24){
+            next12Hours.push(hr);       
+        }else {
+            hourFormat = count++;
+            next12Hours.push(hourFormat);   
+        }   
+    }
+
+    var nextAndPreviousHours = previous12Hours.concat(next12Hours);
+    
     var chart = Highcharts.chart('soapConsumptionChart', {
         title: {
             text: '',
@@ -18,7 +49,7 @@ $(function () {
             x: -20
         },
         xAxis: {
-            categories: categoriesDefault
+            categories: previous12Hours
         },
         yAxis: {
             title: {
@@ -55,7 +86,7 @@ $(function () {
 
         series: [{
             name: 'Restroom2',
-            data: [5, 50, 100, 200, 300, 400, 500, 600, 700, 750, 500, 400, 200, 100, 5, 50, 100, 200, 300, 400, 500, 600, 700, 750, 500, 400],
+            data: [5, 50, 100, 200, 300, 400, 500, 600, 700, 750, 500, 400, 200, 100, 5, 50, 100, 200, 300, 400, 500, 600, 500, 400],
             lineColor: "#e0e0e0",
             
             marker: {
@@ -66,7 +97,7 @@ $(function () {
             }
         }, {
             name: 'Grocery',
-            data: [10, 40, 90, 190, 250, 440, 600, 610, 720, 710, 400, 300, 220, 60, 10, 40, 90, 190, 250, 440, 600, 610, 720, 710, 400, 300],
+            data: [10, 40, 90, 190, 250, 440, 600, 610, 720, 710, 400, 300, 220, 60, 10, 40, 90, 190, 600, 610, 720, 710, 400, 300],
             lineColor: "#5bcef6",
             marker: {
                 symbol: 'circle',
@@ -74,7 +105,7 @@ $(function () {
                 radius: 6           }
         }, {
             name: 'Kitchen',
-            data: [5, 30, 60, 160, 240, 430, 650, 670, 700, 650, 440, 330, 180, 20, 5, 30, 60, 160, 240, 430, 650, 670, 700, 650, 440, 330],
+            data: [5, 30, 60, 160, 240, 430, 650, 670, 700, 650, 440, 330, 180, 20, 5, 30, 60, 160, 240, 430, 700, 650, 440, 330],
             lineColor: "#84de63",
             marker: {
                 symbol: 'circle',
@@ -83,7 +114,7 @@ $(function () {
             }
         }, {
             name: 'Restroom',
-            data: [5, 20, 30, 50, 150, 200, 250, 400, 250, 150, 100, 50, 20, 10, 5, 20, 30, 50, 150, 200, 250, 400, 250, 150, 100, 50],
+            data: [5, 20, 30, 50, 150, 200, 250, 400, 250, 150, 100, 50, 20, 10, 5, 20, 30, 50, 150, 200, 250, 150, 100, 50],
             lineColor: "#eea166",
             marker: {
                 symbol: 'circle',
@@ -92,7 +123,7 @@ $(function () {
             }
         },{
             name: 'Meeting Room',
-            data: [5, 20, 10, 50, 100, 140, 250, 350, 380, 220, 150, 100, 50, 40, 5, 20, 10, 50, 100, 140, 250, 350, 380, 220, 150, 100],
+            data: [5, 20, 10, 50, 100, 140, 250, 350, 380, 220, 150, 100, 50, 40, 5, 20, 10, 50, 100, 140, 250, 350, 150, 100],
             lineColor: "#3e3e44",
             marker: {
                 symbol: 'circle',
@@ -102,16 +133,16 @@ $(function () {
         }]
     });
     chart.xAxis.forEach(function(d){
-        d.setExtremes(0, 14);
+        d.setExtremes(0, 11);
     })
 
     $('#next12HoursSoapConsumption').click(function(){
         $('#currentHoursSoapConsumption').css('display','inline-block');
         $(this).css('display', 'none');
         chart.xAxis.forEach(function(d){
-            d.setExtremes(15, 26);
+            d.setExtremes(12, 23);
         })
-        chart.xAxis[0].setCategories(categoriesAdded);
+        chart.xAxis[0].setCategories(nextAndPreviousHours);
     })
 
     // back button click show default data
@@ -119,9 +150,9 @@ $(function () {
         $('#next12HoursSoapConsumption').css('display','inline-block');
         $(this).css('display', 'none');
         chart.xAxis.forEach(function(d){
-            d.setExtremes(0, 14);
+            d.setExtremes(0, 11);
         })
-        chart.xAxis[0].setCategories(categoriesDefault);
+        chart.xAxis[0].setCategories(previous12Hours);
     });
     
 
@@ -262,3 +293,5 @@ $(function () {
         }
     });
 });
+
+
