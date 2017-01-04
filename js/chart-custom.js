@@ -3,7 +3,7 @@ $(function () {
 
     // variable define
     var previous12Hours = [];
-    var next12Hours = [];
+    var previous24Hours = [];
 
 
     // logic for get current hour and next hours
@@ -24,32 +24,31 @@ $(function () {
     }
     previous12Hours.reverse();
 
-    // next 12 hours get
+    // previous 24 hours get
     var count = 1;
     for(var i=1; i<=12; i++){
         var hr = currentHours + i;
         if(hr <= 24){
-            next12Hours.push(hr);       
+            previous24Hours.push(hr);       
         }else {
             hourFormat = count++;
-            next12Hours.push(hourFormat);   
+            previous24Hours.push(hourFormat);   
         }   
     }
-
-    var nextAndPreviousHours = previous12Hours.concat(next12Hours);
     
+    var nextAndPreviousHours = previous24Hours.concat(previous12Hours);
+    
+
     var chart = Highcharts.chart('soapConsumptionChart', {
         title: {
-            text: '',
-            x: -20 //center
+            text: ''
         },
         type: 'spline',
         subtitle: {
-            text: '',
-            x: -20
+            text: ''
         },
         xAxis: {
-            categories: previous12Hours
+            categories: nextAndPreviousHours
         },
         yAxis: {
             title: {
@@ -60,6 +59,11 @@ $(function () {
                 width: 1,
                 color: '#808080'
             }]
+        },
+        plotOptions: {
+            series: {
+                lineWidth: 2
+            }
         },
         exporting: {
             enabled: false
@@ -81,7 +85,7 @@ $(function () {
                 "fontWeight": "normal"
             },
             itemDistance: 15,
-            itemMarginTop: 10
+            itemMarginTop: 0
         },
 
         series: [{
@@ -133,26 +137,26 @@ $(function () {
         }]
     });
     chart.xAxis.forEach(function(d){
-        d.setExtremes(0, 11);
+        d.setExtremes(12, 23);
     })
 
-    $('#next12HoursSoapConsumption').click(function(){
-        $('#currentHoursSoapConsumption').css('display','inline-block');
-        $(this).css('display', 'none');
-        chart.xAxis.forEach(function(d){
-            d.setExtremes(12, 23);
-        })
-        chart.xAxis[0].setCategories(nextAndPreviousHours);
-    })
-
-    // back button click show default data
-    $('#currentHoursSoapConsumption').click(function(){
-        $('#next12HoursSoapConsumption').css('display','inline-block');
+    $('#prev24HoursSoapConsumption').click(function(){
+        $('#prev12HoursSoapConsumption').css('display','inline-block');
         $(this).css('display', 'none');
         chart.xAxis.forEach(function(d){
             d.setExtremes(0, 11);
         })
-        chart.xAxis[0].setCategories(previous12Hours);
+        // chart.xAxis[0].setCategories(nextAndPreviousHours);
+    })
+
+    // back button click show default data
+    $('#prev12HoursSoapConsumption').click(function(){
+        $('#prev24HoursSoapConsumption').css('display','inline-block');
+        $(this).css('display', 'none');
+        chart.xAxis.forEach(function(d){
+            d.setExtremes(12, 23);
+        })
+        // chart.xAxis[0].setCategories(nextAndPreviousHours);
     });
     
 
@@ -196,7 +200,7 @@ $(function () {
             symbolRadius: 6,
             enabled: false,
             itemStyle: {
-                "color": "#7d7d7d",  
+                "color": "#7d7d7d",
                 "fontSize": "14px", 
                 "fontWeight": "normal"
             },
@@ -214,11 +218,17 @@ $(function () {
         },
         plotOptions: {
             line: {
+
                 dataLabels: {
                     enabled: true
                 },
                 enableMouseTracking: false
             }
+            // ,
+            // options: [
+            //     color: 'red'
+            // ]
+            
         },
         series: [
             {

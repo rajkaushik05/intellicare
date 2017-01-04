@@ -57,12 +57,10 @@
 				color: #a1a3a4;
 				text-align: right;
 				margin: 0;
+				font-size: 12px;
 				span{
 					font-weight: bold;
 					@media (max-width: 350px)  {
-						display: block;
-					}
-					@media (min-width: 1024px) and (max-width: 1180px)  {
 						display: block;
 					}
 				}
