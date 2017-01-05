@@ -30,6 +30,34 @@
 				$(this).children('.text').text('View Details');
 				flag = true;
 			}
+			
+			// function itemActive($el){
+			// 	$el.siblings().removeClass('active');
+	  //       	$el.addClass('active');
+	  //       	$el.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').removeClass('active');
+	  //       	$el.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').eq(newIndex).addClass('active');
+			// }
+
+			// $('.bxslider').bxSlider({
+	  //           slideWidth: 235,
+	  //           slideMargin: 10,
+	  //           minSlides: 1,
+	  //           maxSlides: 4,
+	  //           infiniteLoop: false,
+	  //           responsive: true,
+	  //           controls: true,
+		 //        pager: false,
+		 //        moveSlides: 1,
+		 //        hideControlOnEnd: true,
+		 //        onSlideNext: function($slideElement, oldIndex, newIndex){
+		 //        	itemActive($slideElement);
+		 //        },
+		 //        onSlidePrev: function($slideElement, oldIndex, newIndex){
+		 //        	itemActive($slideElement);
+		 //        }
+	  //       });
+
+			
 			$('.bxslider').bxSlider({
 	            slideWidth: 235,
 	            slideMargin: 10,
@@ -39,7 +67,20 @@
 	            responsive: true,
 	            controls: true,
 		        pager: false,
-		        hideControlOnEnd: true
+		        moveSlides: 1,
+		        hideControlOnEnd: true,
+		        onSlideNext: function($slideElement, oldIndex, newIndex){
+		        	$slideElement.siblings().removeClass('active');
+		        	$slideElement.addClass('active');
+		        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').removeClass('active');
+		        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').eq(newIndex).addClass('active');
+		        },
+		        onSlidePrev: function($slideElement, oldIndex, newIndex){
+		        	$slideElement.siblings().removeClass('active');
+		        	$slideElement.addClass('active');
+		        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').removeClass('active');
+		        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').eq(newIndex).addClass('active');
+		        }
 	        });
 			
 
