@@ -30,6 +30,14 @@
 				$(this).children('.text').text('View Details');
 				flag = true;
 			}
+
+			// function itemActive(){
+			// 	$slideElement.siblings().removeClass('active');
+	  //       	$slideElement.addClass('active');
+	  //       	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').removeClass('active');
+	  //       	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').eq(newIndex).addClass('active');
+			// }
+
 			$('.bxslider').bxSlider({
 	            slideWidth: 235,
 	            slideMargin: 10,
@@ -39,7 +47,20 @@
 	            responsive: true,
 	            controls: true,
 		        pager: false,
-		        hideControlOnEnd: true
+		        moveSlides: 1,
+		        hideControlOnEnd: true,
+		        onSlideNext: function($slideElement, oldIndex, newIndex){
+		        	$slideElement.siblings().removeClass('active');
+		        	$slideElement.addClass('active');
+		        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').removeClass('active');
+		        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').eq(newIndex).addClass('active');
+		        },
+		        onSlidePrev: function($slideElement, oldIndex, newIndex){
+		        	$slideElement.siblings().removeClass('active');
+		        	$slideElement.addClass('active');
+		        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').removeClass('active');
+		        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').eq(newIndex).addClass('active');
+		        }
 	        });
 			
 
