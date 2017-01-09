@@ -18,8 +18,53 @@
 			e.stopPropagation();
 		})
 
-	    var flag = true;
-		// site detail bxslider show / hide  
+	    
+	    function itemActive($el, newIndex){
+			$el.siblings().removeClass('active');
+        	$el.addClass('active');
+        	$el.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').removeClass('active');
+        	$el.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').eq(newIndex).addClass('active');
+		}
+	    var settings = {
+			slideWidth: 235,
+            slideMargin: 10,
+            minSlides: 1,
+            maxSlides: 4,
+            infiniteLoop: false,
+            responsive: true,
+            controls: true,
+	        pager: false,
+	        moveSlides: 1,
+	        hideControlOnEnd: true,
+	        onSlideNext: function($slideElement, oldIndex, newIndex){
+	        	itemActive($slideElement, newIndex);
+	        },
+	        onSlidePrev: function($slideElement, oldIndex, newIndex){
+	        	itemActive($slideElement, newIndex);
+	        }	
+		}
+		
+		var bxSlider = $('.bxslider').bxSlider(settings);
+
+		function runSliderCode (cb){
+			var bxSlider = $('.bxslider').bxSlider(settings);	
+			cb();
+		}
+		runSliderCode(function(){
+			$('.site-item .bxslider-block').hide();
+		})
+		
+		// click on slider item and make active current element
+		$('.bxslider-block .bxslider li').click(function(){
+
+			bxSlider.goToSlide($(this).index());
+
+			itemActive($(this), $(this).index());
+		})
+
+
+		// site detail bxslider show / hide 
+		var flag = true; 
 		$('.site-item .view-bxslider-content').click(function(e){
 			$(this).toggleClass('arrow-up');
 			$(this).parents('.dispensers').siblings('.bxslider-block').slideToggle(100);
@@ -30,73 +75,9 @@
 				$(this).children('.text').text('View Details');
 				flag = true;
 			}
-
-			var settings = {
-				slideWidth: 235,
-	            slideMargin: 10,
-	            minSlides: 1,
-	            maxSlides: 4,
-	            infiniteLoop: false,
-	            responsive: true,
-	            controls: true,
-		        pager: false,
-		        moveSlides: 1,
-		        hideControlOnEnd: true,
-		        onSlideNext: function($slideElement, oldIndex, newIndex){
-		        	itemActive($slideElement, newIndex);
-		        },
-		        onSlidePrev: function($slideElement, oldIndex, newIndex){
-		        	itemActive($slideElement, newIndex);
-		        }	
-			}
-			
-
-			$('.bxslider').bxSlider(settings);
-			// slider.goToSlide(3);
-
-			function itemActive($el, newIndex){
-				$el.siblings().removeClass('active');
-	        	$el.addClass('active');
-	        	$el.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').removeClass('active');
-	        	$el.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').eq(newIndex).addClass('active');
-			}
-
-			
-			// $('.bxslider').bxSlider({
-	  //           slideWidth: 235,
-	  //           slideMargin: 10,
-	  //           minSlides: 1,
-	  //           maxSlides: 4,
-	  //           infiniteLoop: false,
-	  //           responsive: true,
-	  //           controls: true,
-		 //        pager: false,
-		 //        moveSlides: 1,
-		 //        hideControlOnEnd: true,
-		 //        onSlideNext: function($slideElement, oldIndex, newIndex){
-		 //        	$slideElement.siblings().removeClass('active');
-		 //        	$slideElement.addClass('active');
-		 //        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').removeClass('active');
-		 //        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').eq(newIndex).addClass('active');
-		 //        },
-		 //        onSlidePrev: function($slideElement, oldIndex, newIndex){
-		 //        	$slideElement.siblings().removeClass('active');
-		 //        	$slideElement.addClass('active');
-		 //        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').removeClass('active');
-		 //        	$slideElement.parents('.bxslider-wrap').siblings('.tab-content').children('.tab').eq(newIndex).addClass('active');
-		 //        }
-	  //       });
-			
+			var bxSlider = $('.bxslider').bxSlider(settings);
 
 			e.preventDefault();
-		})
-
-		$('.bxslider-block .bxslider li').click(function(){
-			$(this).siblings('li').removeClass('active');
-			$(this).addClass('active');
-			var getIndex = $(this).index();
-			$(this).parents('.bxslider-wrap').siblings('.tab-content').find('.tab').removeClass('active');
-			$(this).parents('.bxslider-wrap').siblings('.tab-content').find('.tab').eq(getIndex).addClass('active');
 		})
 
 		// back page navigation redirect 
